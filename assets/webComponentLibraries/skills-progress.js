@@ -11,7 +11,7 @@ class SkillProgress extends HTMLElement {
     const value = parseInt(this.getAttribute("progress"));
     this.color = setProgressColor(value);
     this.width = this.getAttribute('progress') + '%';
-    this.update();
+    this.update(this.label, this.color, this.width);
   }
 
   attributeChangedCallback(attrName, oldVal, newVal) {
@@ -19,9 +19,11 @@ class SkillProgress extends HTMLElement {
     const value = parseInt(this.getAttribute("progress"));
     this.color = setProgressColor(value);
     this.width = this.getAttribute('progress') + '%';
-    this.update();
+    this.update(this.label, this.color, this.width);
   }
-  update() {
+  update(label, color, width) {
+    /* console.log(`this.label - ${this.width} / this.color - ${this.color} / ${this.width}`);
+    console.log(`label - ${label} / color - ${color} / ${width}`); */
     const template = `  
       <style>  
       h2{
@@ -38,7 +40,7 @@ class SkillProgress extends HTMLElement {
         height: 6px;
         border-radius: 3px;
         border: 0px;
-        width: ${this.width};
+        width: ${width};
     }
     
     hr.primary {
@@ -66,8 +68,8 @@ class SkillProgress extends HTMLElement {
     }
       </style>  
       <div class='skill-progress'>
-        <h2>${this.label}</h2>
-        <hr class="${this.color}">
+        <h2>${label}</h2>
+        <hr class="${color}">
         </div>
     `;
     this.shadowRoot.innerHTML = template;
