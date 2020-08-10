@@ -7,6 +7,7 @@ Micro frontend extends the concepts of micro services to the frontend world. The
 <p align="center">
     <img  alt="Designing Micro Frontend with Web Components" src="https://miro.medium.com/max/700/1*YLxB8FegnN_U0MuFl5AEjQ.jpeg" class="img-responsive">
 </p>
+
 ## Demo
 
 Click here to see the demo [Designing Micro Frontend with Web Components](https://sathyaleo08.github.io/MicroFrotEndWithWebComponent/)
